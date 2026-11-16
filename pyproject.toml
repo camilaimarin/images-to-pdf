@@ -1,0 +1,26 @@
+[project]
+name = "imagenes-a-pdf"
+version = "0.1.0"
+description = "Junta todas las imagenes de una carpeta en un PDF, una por pagina."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "img2pdf>=0.5",
+    "pikepdf>=8",
+    "pillow>=10",
+]
+
+[project.scripts]
+imagenes-a-pdf = "imagenes_a_pdf.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
